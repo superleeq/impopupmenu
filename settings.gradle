@@ -1,0 +1,3 @@
+include ':libimpopupmenu'
+include ':app'
+rootProject.name = "ImPopupMenu"

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/lefttop_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#cccccc"
+        android:padding="20dp"
+        android:text="click me" />
+
+    <RadioGroup
+        android:id="@+id/style_radiogroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="100dp">
+
+        <RadioButton
+            android:id="@+id/normalstyle_radiobtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="wechat style" />
+
+        <RadioButton
+            android:id="@+id/simplestyle_radiobtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="no icon style" />
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/horizontal_divider_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="100dp"
+        android:layout_toRightOf="@+id/style_radiogroup"
+        android:checked="true"
+        android:text="horizontal divider" />
+
+    <CheckBox
+        android:id="@+id/vertical_divider_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/horizontal_divider_cb"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/style_radiogroup"
+        android:text="vertical divider" />
+
+    <TextView
+        android:id="@+id/righttop_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="#cccccc"
+        android:padding="20dp"
+        android:text="click me" />
+
+    <TextView
+        android:id="@+id/left_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:background="#cccccc"
+        android:padding="20dp"
+        android:text="click me" />
+
+    <TextView
+        android:id="@+id/right_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="#cccccc"
+        android:padding="20dp"
+        android:text="click me" />
+
+    <TextView
+        android:id="@+id/center_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="#cccccc"
+        android:padding="20dp"
+        android:text="click me" />
+
+
+    <TextView
+        android:id="@+id/bottomleft_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:background="#cccccc"
+        android:padding="20dp"
+        android:text="click me" />
+
+    <TextView
+        android:id="@+id/bottomright_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:background="#cccccc"
+        android:padding="20dp"
+        android:text="click me" />
+
+</RelativeLayout>
