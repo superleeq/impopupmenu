@@ -81,18 +81,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initAttrs(ImPopupMenu imPopupMenu) {
+        //背景色
         imPopupMenu.setBackgroundColor(Color.parseColor("#515151"));
+        //分割线颜色
         imPopupMenu.setDividerColor(Color.parseColor("#80B7B7B7"));
+        //分割线尺寸
         imPopupMenu.setDividerHeight(0.5f);
+        //是否需要垂直方向分割线
         imPopupMenu.setNeedVerticalDivider(vCb.isChecked());
+        //是否需要水平方向分割线，默认需要
         imPopupMenu.setNeedHorizontalDivider(hCb.isChecked());
+        //水平分割线左右间距
         imPopupMenu.setHorizontalDividerPadding(15);
+        //垂直分割线左右间距
         imPopupMenu.setVerticalDividerPadding(10);
+        //item按下效果
         imPopupMenu.setItemBackroundPressColor(Color.BLACK);
+        //图标尺寸
         imPopupMenu.setIconSize(20);
+        //每行item个数
         imPopupMenu.setSpanCount(5);
+        //文本颜色
         imPopupMenu.setTextColor(Color.WHITE);
+        //文本字体大小
         imPopupMenu.setTextSizeSp(14);
+        //每个item间距
         imPopupMenu.setItemPadding(10, 15, 10, 15);
     }
 

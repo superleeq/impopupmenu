@@ -1,10 +1,10 @@
 # impopupmenu
-高仿微信聊天长按popup控件
+高仿微信聊天Android/Ios 长按popup控件
 
-* 支持自动轮播、禁用自动轮播、设置轮播间隔时间</br>
-* 支持无限滑动，采用首尾填充的方案，杜绝闪动感，达到真实流畅的无限滑动</br>
-* 支持任意第三方图片加载库</br>
-* 支持手动设置图片缩放模式</br>
+* 高仿微信UI（默认），并支持UI自定义</br>
+* 默认从控件上方浮出，侧边、顶部、底部均仿微信优化处理</br>
+* popup小箭头仿微信：在触发控件居中</br>
+* 支持有图标、无图标style；支持横、竖向分割线；支持自定义每行数目等</br>
 
 ## Screenshots</br>
 ![demo.png](https://github.com/superleeq/loopview/blob/master/app/src/main/res/raw/demo.png)
@@ -23,72 +23,61 @@ allprojects {
 Step 2.</br>
 ```javascript
 dependencies {
-	 compile 'com.github.superleeq:loopview:2.8'
+	 implementation 'com.github.superleeq:impopupmenu:1.1.1'
 }
 ```
 
-## 使用步骤：</br>
-1，绑定图片
+## 使用：</br>
+1，从控件上浮出并绑定事件
 ```javascript
-        List<Object> urls = new ArrayList<>();
-        urls.add(R.mipmap.car);
-        urls.add("http://img1.dzwww.com:8080/tupian_pl/20150813/16/7858995348613407436.jpg");
-        LoopAdapter loopAdapter = new LoopAdapter(this);
-        loopAdapter.setUrls(urls);
-        loopAdapter.setImageLoader(new AbstractLoopViewImageLoader() {
-            @Override
-            public void displyImage(int resId, ImageView iv) {
-                Glide.with(MainActivity.this).load(resId).into(iv);
-            }
-
-            @Override
-            public void displyImage(String url, ImageView iv) {
-                //手动设置图片适配模式
-                //iv.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                //加载图片,Glide/ImageLoader/picasso/fresco 或自定义都可以
-                Glide.with(MainActivity.this).load(url).into(iv);
-            }
-        });
-
-        loopView.setAdapter(loopAdapter);
-
+                    ImPopupMenu imPopupMenu = new ImPopupMenu(this);
+                    List<PopupItem> itemList = new ArrayList<>();
+                    for (int i = 0; i < items.length; i++) {
+                        PopupItem item = new PopupItem(R.mipmap.ic_test, items[i]);
+                        itemList.add(item);
+                    }
+                    //initAttrs(imPopupMenu);
+                    imPopupMenu.show(anchorView, itemList, new ImPopupMenu.OnImPopupMenuItemClickListener() {
+                        @Override
+                        public void onImPopupMenuItemClick(int position, String clickItemText) {
+                            //处理点击事件
+                            Toast.makeText(anchorView.getContext(), "p:" + position + ",text:" + clickItemText, Toast.LENGTH_SHORT).show();
+                        }
+                    });
 ```
 
-2，处理事件
+2，自定义UI
 ```javascript
-        loopView.setILoopViewListener(new LoopView.ILoopViewListener() {
-            @Override
-            public void onItemClick(int position) {
-                //跳转页面
-                Toast.makeText(loopView.getContext(), "position:" + position, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                //绑定指示器
-                Log.e("lq", "onPageSelected==" + position);
-            }
-        });
-```
-
-3，其他
-```javascript
-        //禁用自动轮播 在setAdapter前调用
-        loopView.setEnableAutoPlay(false);
-        //设置轮播时间(毫秒)
-        loopView.setLoopDelayMillis(1000);
+                //背景色
+                imPopupMenu.setBackgroundColor(Color.parseColor("#515151"));
+                //分割线颜色
+                imPopupMenu.setDividerColor(Color.parseColor("#80B7B7B7"));
+                //分割线尺寸
+                imPopupMenu.setDividerHeight(0.5f);
+                //是否需要垂直方向分割线
+                imPopupMenu.setNeedVerticalDivider(vCb.isChecked());
+                //是否需要水平方向分割线，默认需要
+                imPopupMenu.setNeedHorizontalDivider(hCb.isChecked());
+                //水平分割线左右间距
+                imPopupMenu.setHorizontalDividerPadding(15);
+                //垂直分割线左右间距
+                imPopupMenu.setVerticalDividerPadding(10);
+                //item按下效果
+                imPopupMenu.setItemBackroundPressColor(Color.BLACK);
+                //图标尺寸
+                imPopupMenu.setIconSize(20);
+                //每行item个数
+                imPopupMenu.setSpanCount(5);
+                //文本颜色
+                imPopupMenu.setTextColor(Color.WHITE);
+                //文本字体大小
+                imPopupMenu.setTextSizeSp(14);
+                //每个item间距
+                imPopupMenu.setItemPadding(10, 15, 10, 15);
 ```
 
 ## 版本记录</br>
-v1.0 初始版</br>
-v2.0 移除无用类</br>
-v2.5 简化loopview</br>
-v2.6 优化监听</br>
-v2.7 优化依赖名</br>
-v2.8 支持禁用自动轮播</br>
-
-## 外部项目使用</br>
-
+v1.1.1 高仿微信UI并支持丰富自定义</br>
 
 
 ## 反馈</br>
