@@ -7,7 +7,7 @@
 * 支持有图标、无图标style；支持横、竖向分割线；支持自定义每行数目等</br>
 
 ## Screenshots</br>
-![sample.png](https://github.com/superleeq/loopview/blob/master/app/src/main/res/raw/sample.png)
+![sample.png](https://github.com/superleeq/impopupmenu/blob/main/app/src/main/res/raw/sample.png)
 
 ## 添加依赖：</br>
 Step 1.</br>
