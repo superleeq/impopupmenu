@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private RadioGroup radioGroup;
     private CheckBox vCb, hCb;
-    private String[] items = new String[]{"复制", "转发", "收藏", "删除", "多选", "引用", "提醒", "搜一搜"};
+    private String[] items = new String[]{"复制", "转发", "收藏", "删除", "多选","引用","提醒","搜一搜"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //水平分割线左右间距
         imPopupMenu.setHorizontalDividerPadding(15);
         //垂直分割线左右间距
-        imPopupMenu.setVerticalDividerPadding(10);
+        imPopupMenu.setVerticalDividerPadding(6);
         //item按下效果
         imPopupMenu.setItemBackroundPressColor(Color.BLACK);
         //图标尺寸
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //文本字体大小
         imPopupMenu.setTextSizeSp(14);
         //每个item间距
-        imPopupMenu.setItemPadding(10, 15, 10, 15);
+        imPopupMenu.setItemPadding(10, 10, 10, 10);
     }
 
 

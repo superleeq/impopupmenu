@@ -25,6 +25,7 @@ import com.superleeq.libimpopupmenu.bean.PopupItem;
 import com.superleeq.libimpopupmenu.util.ScreenUtil;
 
 import java.util.List;
+
 /**
  * @author superleeq@foxmail.com
  */
@@ -192,12 +193,7 @@ public class ImPopupMenu {
         mImPopupMenuAdapter.setItemPressColor(mItemBackgroundPressColor);
         mImPopupMenuAdapter.setOnImPopupMenuItemClickListener(mOnImPopupMenuItemClickListener);
         //分割线
-        if (needVerticalDivider) {
-            if (isSimpleStyle) {
-                mPopupDividerItemDecoration.setVerticalMoreSize(ScreenUtil.dp2px(mContext, 3));
-            }
-            mPopupDividerItemDecoration.setNeedVerticalDivider(true);
-        }
+        mPopupDividerItemDecoration.setNeedVerticalDivider(needVerticalDivider);
         mPopupDividerItemDecoration.setNeedHorizontalDivider(needHorizontalDivider);
         rv.addItemDecoration(mPopupDividerItemDecoration);
         //

@@ -8,6 +8,7 @@ import android.view.View;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 /**
  * @author superleeq@foxmail.com
  */
@@ -19,7 +20,7 @@ public class PopupDividerItemDecoration extends RecyclerView.ItemDecoration {
     private float verticalPadding = 0;       //上下偏移量
     private boolean needVerticalDivider;//是否需要垂直方向的分割线
     private boolean needHorizontalDivider = true;
-    private int verticalMoreSize;//垂直方向分割线多余的size
+//    private int verticalMoreSize;//垂直方向分割线多余的size
 
     public PopupDividerItemDecoration() {
         mPaint = new Paint();
@@ -36,12 +37,12 @@ public class PopupDividerItemDecoration extends RecyclerView.ItemDecoration {
         this.needHorizontalDivider = needHorizontalDivider;
     }
 
-    public PopupDividerItemDecoration setVerticalMoreSize(int verticalMoreSize) {
-        if (verticalPadding > 0) {
-            this.verticalMoreSize = verticalMoreSize;
-        }
-        return this;
-    }
+//    public PopupDividerItemDecoration setVerticalMoreSize(int verticalMoreSize) {
+//        if (verticalPadding > 0) {
+//            this.verticalMoreSize = verticalMoreSize;
+//        }
+//        return this;
+//    }
 
     public PopupDividerItemDecoration setNeedVerticalDivider(boolean needVerticalDivider) {
         this.needVerticalDivider = needVerticalDivider;
@@ -91,6 +92,19 @@ public class PopupDividerItemDecoration extends RecyclerView.ItemDecoration {
         if (layoutManager instanceof GridLayoutManager) {
             spanCount = ((GridLayoutManager) layoutManager).getSpanCount();
         }
+        if (needVerticalDivider && childCount > 1) {
+            for (int i = 0; i < childCount - 1; i++) {
+                if (i != 0 && i == spanCount - 1) {
+                    continue;
+                }
+                View view = parent.getChildAt(i);
+                float dividerLeft = view.getX() + view.getWidth();
+                float dividerTop = view.getY() + verticalPadding;
+                float dividerRight = dividerLeft + mDividerHeight;
+                float dividerBottom = view.getY() + view.getHeight() - verticalPadding;
+                c.drawRect(dividerLeft, dividerTop, dividerRight, dividerBottom, mPaint);
+            }
+        }
         if (childCount <= spanCount || childCount == 1) {
             return;
         }
@@ -107,19 +121,6 @@ public class PopupDividerItemDecoration extends RecyclerView.ItemDecoration {
                 float dividerBottom = view.getTop();
                 c.drawRect(dividerLeft, dividerTop, dividerRight, dividerBottom, mPaint);
                 beforDrawTop = dividerTop;
-            }
-        }
-        if (needVerticalDivider) {
-            for (int i = 0; i < childCount - 1; i++) {
-                if (i != 0 && i == spanCount - 1) {
-                    continue;
-                }
-                View view = parent.getChildAt(i);
-                float dividerLeft = view.getX() + view.getWidth();
-                float dividerTop = view.getY() + verticalPadding + verticalMoreSize;
-                float dividerRight = dividerLeft + mDividerHeight;
-                float dividerBottom = view.getY() + view.getHeight() - verticalPadding;
-                c.drawRect(dividerLeft, dividerTop, dividerRight, dividerBottom, mPaint);
             }
         }
     }
