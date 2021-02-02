@@ -23,7 +23,7 @@ allprojects {
 Step 2.</br>
 ```javascript
 dependencies {
-	 implementation 'com.github.superleeq:impopupmenu:1.1.3'
+	 implementation 'com.github.superleeq:impopupmenu:tag'
 }
 ```
 
@@ -75,10 +75,6 @@ dependencies {
                 //每个item间距
                 imPopupMenu.setItemPadding(10, 15, 10, 15);
 ```
-
-## 版本记录</br>
-v1.1.1 高仿微信UI并支持丰富自定义</br>
-
 
 ## 反馈</br>
 在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流</br>
