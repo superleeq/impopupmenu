@@ -23,7 +23,7 @@ allprojects {
 Step 2.</br>
 ```javascript
 dependencies {
-	 implementation 'com.github.superleeq:impopupmenu:1.1.1'
+	 implementation 'com.github.superleeq:impopupmenu:1.1.3'
 }
 ```
 
