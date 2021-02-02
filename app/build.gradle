@@ -29,8 +29,8 @@ android {
 }
 
 dependencies {
-    //    implementation project(':libimpopupmenu')
-    implementation 'com.github.superleeq:impopupmenu:1.1.1'
+        implementation project(':libimpopupmenu')
+//    implementation 'com.github.superleeq:impopupmenu:1.1.1'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
