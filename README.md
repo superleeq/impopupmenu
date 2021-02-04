@@ -30,6 +30,7 @@ dependencies {
 ## 使用：</br>
 1，从控件上浮出并绑定事件
 ```javascript
+   //有图标style
    ImPopupMenu imPopupMenu = new ImPopupMenu(this);
    List<PopupItem> itemList = new ArrayList<>();
    for (int i = 0; i < items.length; i++) {
@@ -43,6 +44,19 @@ dependencies {
          //处理点击事件
          Toast.makeText(anchorView.getContext(), "p:" + position + ",text:" + clickItemText, Toast.LENGTH_SHORT).show();
      }
+    });
+    //无图标style
+    ImPopupMenu imPopupMenu = new ImPopupMenu(this);
+    List<String> simpleItemList = new ArrayList<>();
+    for (int i = 0; i < items.length; i++) {
+       simpleItemList.add(items[i]);
+    }
+    //initAttrs(imPopupMenu);
+    imPopupMenu.showWithSimpleStyle(anchorView, simpleItemList, new ImPopupMenu.OnImPopupMenuItemClickListener() {
+       @Override
+      public void onImPopupMenuItemClick(int position, String clickItemText) {
+            Toast.makeText(anchorView.getContext(), "p:" + position + ",text:" + clickItemText, Toast.LENGTH_SHORT).show();
+       }
     });
 ```
 
