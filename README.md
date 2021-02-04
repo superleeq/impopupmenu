@@ -1,5 +1,5 @@
 # impopupmenu
-高仿微信聊天Android/Ios 长按popup控件（基于2021版微信）
+高仿微信聊天、朋友圈Android/Ios 长按popup控件（基于2021版微信）
 
 * 高仿微信UI（默认），并支持UI自定义</br>
 * 默认从控件上方浮出，侧边、顶部、底部均仿微信优化处理</br>
@@ -7,7 +7,7 @@
 * 支持有图标、无图标style；支持横、竖向分割线；支持自定义每行数目等</br>
 
 ## Screenshots</br>
-![sample.png](https://github.com/superleeq/impopupmenu/blob/main/app/src/main/res/raw/sample.png)
+![sample.png](https://github.com/superleeq/impopupmenu/blob/main/app/src/main/res/raw/sample.png)![sample.png](https://github.com/superleeq/impopupmenu/blob/main/app/src/main/res/raw/sample2.png)</br>
 
 ## 添加依赖：</br>
 Step 1.</br>
@@ -23,27 +23,27 @@ allprojects {
 Step 2.</br>
 ```javascript
 dependencies {
-	 implementation 'com.github.superleeq:impopupmenu:tag'
+	 implementation 'com.github.superleeq:impopupmenu:Tag'
 }
 ```
 
 ## 使用：</br>
 1，从控件上浮出并绑定事件
 ```javascript
-                    ImPopupMenu imPopupMenu = new ImPopupMenu(this);
-                    List<PopupItem> itemList = new ArrayList<>();
-                    for (int i = 0; i < items.length; i++) {
-                        PopupItem item = new PopupItem(R.mipmap.ic_test, items[i]);
-                        itemList.add(item);
-                    }
-                    //initAttrs(imPopupMenu);
-                    imPopupMenu.show(anchorView, itemList, new ImPopupMenu.OnImPopupMenuItemClickListener() {
-                        @Override
-                        public void onImPopupMenuItemClick(int position, String clickItemText) {
-                            //处理点击事件
-                            Toast.makeText(anchorView.getContext(), "p:" + position + ",text:" + clickItemText, Toast.LENGTH_SHORT).show();
-                        }
-                    });
+   ImPopupMenu imPopupMenu = new ImPopupMenu(this);
+   List<PopupItem> itemList = new ArrayList<>();
+   for (int i = 0; i < items.length; i++) {
+       PopupItem item = new PopupItem(R.mipmap.ic_test, items[i]);
+       itemList.add(item);
+   }
+   //initAttrs(imPopupMenu);
+   imPopupMenu.show(anchorView, itemList, new ImPopupMenu.OnImPopupMenuItemClickListener() {
+    @Override
+     public void onImPopupMenuItemClick(int position, String clickItemText) {
+         //处理点击事件
+         Toast.makeText(anchorView.getContext(), "p:" + position + ",text:" + clickItemText, Toast.LENGTH_SHORT).show();
+     }
+    });
 ```
 
 2，自定义UI
